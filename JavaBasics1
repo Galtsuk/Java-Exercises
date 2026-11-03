@@ -1,0 +1,257 @@
+
+import java.util.Scanner;
+
+public class Question1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Please enter your name: ");
+        String name = scanner.nextLine();
+
+        System.out.printf("Hello %s!", name);
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Question2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        double sum = num1 + num2;
+        double difference = num1 - num2;
+        double product = num1 * num2;
+        double quotient = num1 / num2;
+
+        System.out.println("Sum: " + sum);
+        System.out.println("Difference: " + difference);
+        System.out.println("Product: " + product);
+        System.out.println("Quotient: " + quotient);
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Question3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Please enter your age: ");
+        int age = scanner.nextInt();
+
+        if (age >= 0 && age <= 12) {
+            System.out.println("You are a Kid!");
+        } else if (age >= 13 && age <= 19) {
+            System.out.println("You are a Teenager!");
+        } else if (age >= 20 && age <= 64) {
+            System.out.println("You are an Adult!");
+        } else if (age >= 65) {
+            System.out.println("You are old!");
+        } else {
+            System.out.println("Age is not valid!");
+        }
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Question4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String username = "Chad Gepetti";
+        String password = "1482";
+
+        System.out.print("Please enter your username: ");
+        String loginUsername = scanner.nextLine();
+
+        System.out.print("Please enter your password: ");
+        String loginPassword = scanner.nextLine();
+
+        if (loginUsername.equals(username) && loginPassword.equals(password)) {
+            System.out.println("Logged in!");
+        } else {
+            System.out.println("Username or password is wrong!");
+        }
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Question5 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Price: ");
+        int price = scanner.nextInt();
+
+        System.out.print("Are you a GA team member? ");
+        String member = scanner.next();
+
+        double discount = 0;
+
+        if (member.equalsIgnoreCase("yes")) {
+            if (price > 300) {
+                discount = price * 0.15;
+            } else {
+                discount = price * 0.05;
+            }
+        } else if (member.equalsIgnoreCase("no") && price > 300) {
+            discount = price * 0.07;
+        }
+
+        System.out.println("Discount amount: " + discount);
+        System.out.println("Price to pay: " + (price - discount));
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Question6 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a positive integer");
+        int number = scanner.nextInt();
+
+        for (int i = number; i > 0; i--) {
+            System.out.println(i);
+        }
+
+        System.out.println("Blastoff!");
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Question7 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int number = 1;
+        int sum = 0;
+
+        while (number != 0) {
+            System.out.print("Enter a number (0 to finish): ");
+            number = scanner.nextInt();
+            sum = sum + number;
+        }
+
+        System.out.println("The total sum is: " + sum);
+    }
+}
+
+
+public class Question8 {
+    public static void main(String[] args) {
+        System.out.print("*\t|\t");
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.print(i + "\t");
+        }
+
+        System.out.println();
+        System.out.println("-----------------------------------------------");
+
+        for (int row = 1; row <= 10; row++) {
+            System.out.print(row + "\t|\t");
+
+            for (int column = 1; column <= 10; column++) {
+                int product = row * column;
+                System.out.print(product + "\t");
+            }
+
+            System.out.println();
+        }
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Question9 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int num1 = 0;
+        int num2 = 1;
+        int num3 = 0;
+
+        System.out.print("Enter the number of Fibonacci terms to generate: ");
+        int num = scanner.nextInt();
+
+        System.out.print("Fibonacci Series: ");
+
+        for (int i = 0; i < num; i++) {
+            System.out.print(num1);
+
+            if (i < num - 1) {
+                System.out.print(", ");
+            }
+
+            num3 = num1 + num2;
+            num1 = num2;
+            num2 = num3;
+        }
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Question10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a positive integer to reverse: ");
+        int num = scanner.nextInt();
+
+        int original = num;
+        int reversed = 0;
+
+        while (num > 0) {
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+            num = num / 10;
+        }
+
+        System.out.println("Original number: " + original);
+        System.out.println("Reversed number: " + reversed);
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Question11 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a word: ");
+        String word = scanner.nextLine();
+
+        String reversed = "";
+
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversed = reversed + word.charAt(i);
+        }
+
+        if (word.equals(reversed)) {
+            System.out.println("The word is a palindrome!");
+        } else {
+            System.out.println("The word is not a palindrome.");
+        }
+    }
+}
